@@ -13,20 +13,20 @@ public class Coin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long coinid;
 
-    private int number;
+    private int quantity;
     private double value;
-    private String singname;
-    private String pluralname;
+    private String name;
+    private String nameplural;
 
     // constructors
     public Coin() {
     }
 
-    public Coin(int number, double value, String singname, String pluralname) {
-        this.number = number;
+    public Coin(int quantity, double value, String name, String nameplural) {
+        this.quantity = quantity;
         this.value = value;
-        this.singname = singname;
-        this.pluralname = pluralname;
+        this.name = name;
+        this.nameplural = nameplural;
     }
 
     // getters and setters
@@ -38,12 +38,12 @@ public class Coin {
         this.coinid = coinid;
     }
 
-    public int getNumber() {
-        return number;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double getValue() {
@@ -54,20 +54,20 @@ public class Coin {
         this.value = value;
     }
 
-    public String getSingname() {
-        return singname;
+    public String getName() {
+        return name;
     }
 
-    public void setSingname(String singname) {
-        this.singname = singname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPluralname() {
-        return pluralname;
+    public String getNameplural() {
+        return nameplural;
     }
 
-    public void setPluralname(String pluralname) {
-        this.pluralname = pluralname;
+    public void setNameplural(String nameplural) {
+        this.nameplural = nameplural;
     }
 
     // toString
@@ -76,10 +76,10 @@ public class Coin {
     public String toString() {
         return "Coin{" +
                 "coinid=" + coinid +
-                ", number=" + number +
+                ", quantity=" + quantity +
                 ", value=" + value +
-                ", singname='" + singname + '\'' +
-                ", pluralname='" + pluralname + '\'' +
+                ", name='" + name + '\'' +
+                ", nameplural='" + nameplural + '\'' +
                 '}';
     }
 }

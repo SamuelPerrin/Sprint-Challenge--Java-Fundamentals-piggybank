@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
 public class CoinController {
     @Autowired
     CoinRepository coinrepo;
@@ -23,9 +25,9 @@ public class CoinController {
         double total = 0;
         String result = "";
         for (Coin c : coins) {
-            String noun = c.getNumber() > 1 ? c.getPluralname() : c.getSingname();
-            result += c.getNumber() + " " + noun + "\n";
-            total += c.getNumber() * c.getValue();
+            String noun = c.getQuantity() > 1 ? c.getNameplural() : c.getName();
+            result += c.getQuantity() + " " + noun + "\n";
+            total += c.getQuantity() * c.getValue();
         }
         result += "The piggy bank holds " + total;
         System.out.println(result);
